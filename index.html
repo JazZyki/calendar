@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link href='fullcalendar/packages/core/main.css' rel='stylesheet' />
+    <link href='fullcalendar/packages/daygrid/main.css' rel='stylesheet' />
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="scss/style.css">
+
+    <title>Calendar #10</title>
+</head>
+
+<body>
+    <div class="header-container">
+
+    </div>
+    <div id='calendar-container'>
+        <div id='calendar'></div>
+    </div>
+
+
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/tooltip.js/dist/umd/tooltip.min.js"></script>
+
+    <script src='fullcalendar/packages/core/main.js'></script>
+    <script src='fullcalendar/packages/interaction/main.js'></script>
+    <script src='fullcalendar/packages/daygrid/main.js'></script>
+    <script src='fullcalendar/packages/timegrid/main.js'></script>
+    <script src='fullcalendar/packages/list/main.js'></script>
+    <script src='fullcalendar/packages/core/locales/cs.js'></script>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                plugins: ['interaction', 'dayGrid'],
+                height: 'parent',
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: ''
+                },
+                defaultView: 'dayGridMonth',
+                //defaultDate: '2022-08-12',
+                navLinks: true, // can click day/week names to navigate views
+                editable: false,
+                eventLimit: true, // allow "more" link when too many events
+                events: [ {
+                    title: 'Den holocaustu Sinti a Romů',
+                    start: '2022-08-02',
+                    classNames: 'sekular',
+                    //url: 'seznam.cz',
+                    overlap: 'false',
+                    extendedProps: {
+                        description: 'Případný popis události - možno vložit odkaz na proklik'
+                    }
+                },
+                {
+                    title: 'Tiša be-av',
+                    start: '2022-08-06',
+                    classNames: 'jewish',
+                    //url: 'seznam.cz',
+                    overlap: 'false',
+                    extendedProps: {
+                        description: 'výročí zničení 1. a 2. jeruzalemského chrámu (půst posunut na 7. 8.)'
+                    }
+                },
+                {
+                    title: 'Ašura',
+                    start: '2022-08-08',
+                    end: '2022-08-10',
+                    allDay: 'true',
+                    classNames: 'muslim',
+                    //url: 'seznam.cz',
+                    overlap: 'false',
+                    extendedProps: {
+                        description: 'Muharram 9 - Muharram 10 1444 - den, kdy Alláh zachránil Mojžíše a jeho lid z rukou faraona a jeho armády'
+                    }
+                }],
+                eventRender: function(info) {
+        var tooltip = new Tooltip(info.el, {
+          title: info.event.extendedProps.description,//you can give data for tooltip
+          placement: 'top',
+          trigger: 'hover',
+          container: 'body'
+        });
+      }
+            });
+
+            calendar.render();
+            calendar.setOption('locale', 'cs');
+        });
+    </script>
+
+    <script src="js/main.js"></script>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+</body>
+
+</html>
