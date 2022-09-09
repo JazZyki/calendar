@@ -22,7 +22,7 @@
     <!-- Style -->
     <link rel="stylesheet" href="scss/style.css">
 
-    <title>Calendar #10</title>
+    <title>Multináboženský Kalendář Dingir</title>
 </head>
 
 <body>
@@ -46,10 +46,11 @@
     <script src='fullcalendar/packages/timegrid/main.js'></script>
     <script src='fullcalendar/packages/list/main.js'></script>
     <script src='fullcalendar/packages/core/locales/cs.js'></script>
+    <script src="fullcalendar/packages/rrule/main.min.js"></script>
 
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             var calendarEl = document.getElementById('calendar');
 
             var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -64,74 +65,667 @@
                 //defaultDate: '2022-08-12',
                 navLinks: true, // can click day/week names to navigate views
                 editable: false,
-                eventLimit: true, // allow "more" link when too many events
-                events: [ {
-                    title: 'Den holocaustu Sinti a Romů',
-                    start: '2022-08-02',
-                    classNames: 'sekular',
-                    //url: 'seznam.cz',
-                    overlap: 'false',
-                    extendedProps: {
-                        description: 'Případný popis události - možno vložit odkaz na proklik'
-                    }
-                },
-                {
-                    title: 'Tiša be-av',
-                    start: '2022-08-06',
-                    classNames: 'jewish',
-                    //url: 'seznam.cz',
-                    overlap: 'false',
-                    extendedProps: {
-                        description: 'výročí zničení 1. a 2. jeruzalemského chrámu (půst posunut na 7. 8.)'
-                    }
-                },
-                {
-                    title: 'Ašura',
-                    start: '2022-08-08',
-                    end: '2022-08-10',
-                    allDay: 'true',
-                    classNames: 'muslim',
-                    //url: 'seznam.cz',
-                    overlap: 'false',
-                    extendedProps: {
-                        description: 'Muharram 9 - Muharram 10 1444 - den, kdy Alláh zachránil Mojžíše a jeho lid z rukou faraona a jeho armády'
-                    }
-                }],
-                eventRender: function(info) {
-        var tooltip = new Tooltip(info.el, {
-          title: info.event.extendedProps.description,//you can give data for tooltip
-          placement: 'top',
-          trigger: 'hover',
-          container: 'body'
-        });
-      }
+                eventLimit: false, // allow "more" link when too many events
+                nextDayThreshold: '09:00:00',
+                events: 'events.json',
+                eventRender: function (info) {
+                    var tooltip = new Tooltip(info.el, {
+                        title: info.event.extendedProps.description,//you can give data for tooltip
+                        placement: 'top',
+                        trigger: 'hover',
+                        container: 'body'
+                    });
+                }
             });
 
             calendar.render();
             calendar.setOption('locale', 'cs');
         });
     </script>
+    <div class="legend">
+        <p>Legenda:</p>
+        <div class="secular">sekulární kalendář</div>
+        <div class="westernC">západní křesťané</div>
+        <div class="easternC">východní křesťané</div>
+        <div class="buddhist">buddhisté</div>
+        <div class="hindi">hinduisté</div>
+        <div class="muslim">muslimové</div>
+        <div class="jewish">židé</div>
+        <div class="druzis">drúzové</div>
+        <div class="samaritan">samaritáni</div>
+    </div>
+
+    <div class="holidayOverview">
+        <h2>Svátky seznam</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>A</th>
+                    <th>B</th>
+                    <th>Datum</th>
+                    <th>Svátek</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>#jan1</td>
+                    <td>secular</td>
+                    <td>1. ledna</td>
+                    <td>Nový občanský rok</td>
+                </tr>
+                <tr>
+                    <td>#jan1-1</td>
+                    <td>westernC</td>
+                    <td>1. ledna</td>
+                    <td>obřezání Páně</td>
+                </tr>
+                <tr>
+                    <td>#jan6</td>
+                    <td>westernC</td>
+                    <td>6. ledna</td>
+                    <td>Zjevení Páně (Epifanie)</td>
+                </tr>
+                <tr>
+                    <td>#jan7</td>
+                    <td>easternC</td>
+                    <td>7. — 8. ledna</td>
+                    <td>Pravoslavné Vánoce</td>
+                </tr>
+                <tr>
+                    <td>#jan14</td>
+                    <td>easternC</td>
+                    <td>14. ledna</td>
+                    <td>Pravoslavný Nový rok — obřezání Páně</td>
+                </tr>
+                <tr>
+                    <td>#jan14-1</td>
+                    <td>hindi</td>
+                    <td>14. ledna</td>
+                    <td>Makar šankranti — zimní slunovrat, návrat světla moudrosti</td>
+                </tr>
+                <tr>
+                    <td>#jan17</td>
+                    <td>jewish</td>
+                    <td>17. ledna</td>
+                    <td>Tu bišvat — Nový rok stromů</td>
+                </tr>
+                <tr>
+                    <td>#jan18</td>
+                    <td>buddhist</td>
+                    <td>18. ledna</td>
+                    <td>Nový rok mahájánového buddhismu</td>
+                </tr>
+                <tr>
+                    <td>#jan18-1</td>
+                    <td>westernC</td>
+                    <td>18. — 25. ledna</td>
+                    <td>Týden modliteb za jednotu křesťanů</td>
+                </tr>
+                <tr>
+                    <td>#jan19</td>
+                    <td>easternC</td>
+                    <td>19. ledna</td>
+                    <td>Zjevení Páně pravoslavných církví</td>
+                </tr>
+                <tr>
+                    <td>#jan19-1</td>
+                    <td>easternC</td>
+                    <td>19. — 20. ledna</td>
+                    <td>Arménské Vánoce</td>
+                </tr>
+                <tr>
+                    <td>#jan27</td>
+                    <td>secular</td>
+                    <td>27. ledna</td>
+                    <td>Mezinárodní den památky obětí holocaustu</td>
+                </tr>
+                <tr>
+                    <td>#feb1</td>
+                    <td>secular</td>
+                    <td>1. — 7. února</td>
+                    <td>Týden mezináboženské harmonie</td>
+                </tr>
+                <tr>
+                    <td>#feb4</td>
+                    <td>secular</td>
+                    <td>4. února</td>
+                    <td>Den mezilidského bratrství</td>
+                </tr>
+                <tr>
+                    <td>#feb5</td>
+                    <td>hindi</td>
+                    <td>5. února</td>
+                    <td>Vasant pančamí — oslava začátku jara</td>
+                </tr>
+                <tr>
+                    <td>#feb15</td>
+                    <td>buddhist</td>
+                    <td>15. února</td>
+                    <td>Den parinirvány</td>
+                </tr>
+                <tr>
+                    <td>#feb16</td>
+                    <td>buddhist</td>
+                    <td>16. února</td>
+                    <td>Mágha púdža — shromáždění osvícených kolem Buddhy</td>
+                </tr>
+                <tr>
+                    <td>#feb18</td>
+                    <td>hindi</td>
+                    <td>18. února</td>
+                    <td>Mahášivarátrí — Šivova noc</td>
+                </tr>
+                <tr>
+                    <td>#feb21</td>
+                    <td>buddhist</td>
+                    <td>21. února</td>
+                    <td>Losar — tibetský nový rok</td>
+                </tr>
+                <tr>
+                    <td>#feb21-1</td>
+                    <td>secular</td>
+                    <td>21. února</td>
+                    <td>čínský a vietnamský nový rok</td>
+                </tr>
+                <tr>
+                    <td>#mar1</td>
+                    <td>muslim</td>
+                    <td>1. března</td>
+                    <td>Isrá´ mi´rádž — zázračná cesta Muhammada z Jeruzaléma do nebe</td>
+                </tr>
+                <tr>
+                    <td>#mar17</td>
+                    <td>jewish</td>
+                    <td>17. března</td>
+                    <td>Purim</td>
+                </tr>
+                <tr>
+                    <td>#mar18</td>
+                    <td>jewish</td>
+                    <td>18. března</td>
+                    <td>Šušan Purim (oslava Purimu v městech, která měla dřív hradby)</td>
+                </tr>
+                <tr>
+                    <td>#mar21</td>
+                    <td>secular</td>
+                    <td>21. března</td>
+                    <td>Mezinárodní den proti rasismu</td>
+                </tr>
+                <tr>
+                    <td>#mar21-1</td>
+                    <td>secular</td>
+                    <td>21. — 28. března</td>
+                    <td>Mezinárodní týdny proti rasismu</td>
+                </tr>
+                <tr>
+                    <td>#mar25</td>
+                    <td>westernC</td>
+                    <td>25. března</td>
+                    <td>Zvěstování panně Marii</td>
+                </tr>
+                <tr>
+                    <td>#mar19</td>
+                    <td>hindi</td>
+                    <td>19. března</td>
+                    <td>Hólí — vítězství dobra nad zlem, svátek barev</td>
+                </tr>
+                <tr>
+                    <td>#apr2</td>
+                    <td>muslim</td>
+                    <td>2. dubna — 2. května</td>
+                    <td>Ramadán — postní měsíc</td>
+                </tr>
+                <tr>
+                    <td>#apr8</td>
+                    <td>secular</td>
+                    <td>8.dubna</td>
+                    <td>Mezinárodní den Romů</td>
+                </tr>
+                <tr>
+                    <td>#apr8-1</td>
+                    <td>buddhist</td>
+                    <td>8.dubna</td>
+                    <td>Hana macuri / Vesak — Buddhovo narození, duchovní probuzení a vstup do parinir vány</td>
+                </tr>
+                <tr>
+                    <td>#apr10</td>
+                    <td>westernC</td>
+                    <td>10.dubna</td>
+                    <td>Květná neděle</td>
+                </tr>
+                <tr>
+                    <td>#apr10-1</td>
+                    <td>hindi</td>
+                    <td>10.dubna</td>
+                    <td>Rámnavámi — narozeniny Šrí Rámy</td>
+                </tr>
+                <tr>
+                    <td>#apr15</td>
+                    <td>westernC</td>
+                    <td>15.dubna</td>
+                    <td>Velký Pátek</td>
+                </tr>
+                <tr>
+                    <td>#apr15-1</td>
+                    <td>samaritan</td>
+                    <td>15.dubna</td>
+                    <td>Samaritánský Pesach</td>
+                </tr>
+                <tr>
+                    <td>#apr16</td>
+                    <td>jewish</td>
+                    <td>16. — 23. dubna</td>
+                    <td>Pesach</td>
+                </tr>
+                <tr>
+                    <td>#apr16-1</td>
+                    <td>buddhist</td>
+                    <td>16.dubna</td>
+                    <td>Nový rok théravádového buddhismu</td>
+                </tr>
+                <tr>
+                    <td>#apr16-2</td>
+                    <td>hindi</td>
+                    <td>16.dubna</td>
+                    <td>Hanumán džajantí — narozeniny Hanumána</td>
+                </tr>
+                <tr>
+                    <td>#apr17</td>
+                    <td>westernC</td>
+                    <td>17.dubna</td>
+                    <td>Velikonoční neděle</td>
+                </tr>
+                <tr>
+                    <td>#apr17-1</td>
+                    <td>easternC</td>
+                    <td>17.dubna</td>
+                    <td>Květná neděle</td>
+                </tr>
+                <tr>
+                    <td>#apr18</td>
+                    <td>westernC</td>
+                    <td>18.dubna</td>
+                    <td>Velikonoční pondělí</td>
+                </tr>
+                <tr>
+                    <td>#apr22</td>
+                    <td>easternC</td>
+                    <td>22.dubna</td>
+                    <td>Velký Pátek</td>
+                </tr>
+                <tr>
+                    <td>#apr24</td>
+                    <td>easternC</td>
+                    <td>24.dubna</td>
+                    <td>Velikonoční neděle</td>
+                </tr>
+                <tr>
+                    <td>#apr25</td>
+                    <td>easternC</td>
+                    <td>25.dubna</td>
+                    <td>Velikonoční pondělí</td>
+                </tr>
+                <tr>
+                    <td>#apr26</td>
+                    <td>druzis</td>
+                    <td>26. — 28. dubna</td>
+                    <td>Nabi Sueib</td>
+                </tr>
+                <tr>
+                    <td>#may3</td>
+                    <td>muslim</td>
+                    <td>3. — 5. května</td>
+                    <td>Íd al-Fitr — Svátek přerušení půstu</td>
+                </tr>
+                <tr>
+                    <td>#may8</td>
+                    <td>secular</td>
+                    <td>8.května</td>
+                    <td>Den vítězství</td>
+                </tr>
+                <tr>
+                    <td>#may8-1</td>
+                    <td>buddhist</td>
+                    <td>8.května</td>
+                    <td>Saga Dawa — narození, probuzení a vstup do parinirvány Buddhy Šákjamuniho (tibetský
+                        buddhismus)</td>
+                </tr>
+                <tr>
+                    <td>#may8-2</td>
+                    <td>secular</td>
+                    <td>8.května</td>
+                    <td>Den matek</td>
+                </tr>
+                <tr>
+                    <td>#may15</td>
+                    <td>hindi</td>
+                    <td>15.května</td>
+                    <td>Nrsimha čaturdaší — svátek inkarnace Višnua</td>
+                </tr>
+                <tr>
+                    <td>#may17</td>
+                    <td>secular</td>
+                    <td>17.května</td>
+                    <td>Den IDAHO — Mezinárodní den proti homofobii, transfobii a bifobii</td>
+                </tr>
+                <tr>
+                    <td>#may19</td>
+                    <td>jewish</td>
+                    <td>19.května</td>
+                    <td>Lag baomer — výročí konce epidemie mezi žáky rabiho Akivy</td>
+                </tr>
+                <tr>
+                    <td>#may26</td>
+                    <td>westernC</td>
+                    <td>26.května</td>
+                    <td>Ježíšovo nanebevstoupení</td>
+                </tr>
+                <tr>
+                    <td>#jun2</td>
+                    <td>easternC</td>
+                    <td>2.června</td>
+                    <td>Ježíšovo nanebevstoupení</td>
+                </tr>
+                <tr>
+                    <td>#jun5</td>
+                    <td>westernC</td>
+                    <td>5.června</td>
+                    <td>Svatodušní neděle</td>
+                </tr>
+                <tr>
+                    <td>#jun5-1</td>
+                    <td>jewish</td>
+                    <td>5. — 6. června</td>
+                    <td>Šavuot</td>
+                </tr>
+                <tr>
+                    <td>#jun16</td>
+                    <td>westernC</td>
+                    <td>16.června</td>
+                    <td>Corpus Christi</td>
+                </tr>
+                <tr>
+                    <td>#jun19</td>
+                    <td>secular</td>
+                    <td>19.června</td>
+                    <td>Den otců</td>
+                </tr>
+                <tr>
+                    <td>#jul5</td>
+                    <td>westernC</td>
+                    <td>5.července</td>
+                    <td>Konstantin a Metoděj</td>
+                </tr>
+                <tr>
+                    <td>#jul6</td>
+                    <td>westernC</td>
+                    <td>6.července</td>
+                    <td>Mistr Jan Hus</td>
+                </tr>
+                <tr>
+                    <td>#jul8</td>
+                    <td>muslim</td>
+                    <td>8. — 9. července</td>
+                    <td>Den Arafa — připomínka vrcholící pouti do Mekky a poutníků stojících na planině Arafat
+                    </td>
+                </tr>
+                <tr>
+                    <td>#jul9</td>
+                    <td>muslim</td>
+                    <td>9. — 12. července</td>
+                    <td>Íd al-Adhá — Svátek oběti (na připomínku Abrahamovy oběti berana místo syna)
+                    </td>
+                </tr>
+                <tr>
+                    <td>#jul13</td>
+                    <td>buddhist</td>
+                    <td>13.července</td>
+                    <td>Asalha púdža (den dharmy) — první vyučování Buddhy v indickém Sarnátu</td>
+                </tr>
+                <tr>
+                    <td>#jul13-1</td>
+                    <td>hindi</td>
+                    <td>13.července</td>
+                    <td>Guru púrnimá — oslava dne, kdy na Zem poprvé dopadlo světlo, den duchovních učitelů</td>
+                </tr>
+                <tr>
+                    <td>#jul16</td>
+                    <td>jewish</td>
+                    <td>16.července</td>
+                    <td>17. tamuz — výročí prolomení hradeb při obléhání Jeruzaléma Babylóňany (2Kr 25,3—4)</td>
+                </tr>
+                <tr>
+                    <td>#jul30</td>
+                    <td>muslim</td>
+                    <td>30.července</td>
+                    <td>Muharam — Nový rok 1444 podle islámského kalendáře</td>
+                </tr>
+                <tr>
+                    <td>#aug2</td>
+                    <td>secular</td>
+                    <td>2.srpna</td>
+                    <td>Den holocaustu Sinti a Romů</td>
+                </tr>
+                <tr>
+                    <td>#aug6</td>
+                    <td>jewish</td>
+                    <td>6.srpna</td>
+                    <td>Tiša be-av — výročí zničení 1. a 2. jeruzalémského chrámu (půst posunut na 7. 8.)</td>
+                </tr>
+                <tr>
+                    <td>#aug8</td>
+                    <td>muslim</td>
+                    <td>8. — 9. srpna</td>
+                    <td>Ašura — den, kdy Alláh zachránil Mojžíše a jeho lid z rukou faraona a jeho armády</td>
+                </tr>
+                <tr>
+                    <td>#aug11</td>
+                    <td>hindi</td>
+                    <td>11.srpna</td>
+                    <td>Rakša bandhan — „ochranná pouta“, oslava sourozeneckých vztahů</td>
+                </tr>
+                <tr>
+                    <td>#aug13</td>
+                    <td>buddhist</td>
+                    <td>13. — 15. srpna</td>
+                    <td>O-Bon — japonský svátek zesnulých</td>
+                </tr>
+                <tr>
+                    <td>#aug18</td>
+                    <td>hindi</td>
+                    <td>18. — 19. srpna</td>
+                    <td>Šrí Krišna džanmáštamí — Krišnovy narozeniny</td>
+                </tr>
+                <tr>
+                    <td>#aug31</td>
+                    <td>hindi</td>
+                    <td>31.srpna</td>
+                    <td>Ganéša čaturthi — Ganéšovy narozeniny</td>
+                </tr>
+                <tr>
+                    <td>#sep4</td>
+                    <td>hindi</td>
+                    <td>4.září</td>
+                    <td>Rádháštamí — den zjevení Šrímatí Rádhárání</td>
+                </tr>
+                <tr>
+                    <td>#sep21</td>
+                    <td>secular</td>
+                    <td>21.září</td>
+                    <td>Mezinárodní den míru</td>
+                </tr>
+                <tr>
+                    <td>#sep26</td>
+                    <td>jewish</td>
+                    <td>26. — 27. září</td>
+                    <td>Roš hašana — Nový rok 5783</td>
+                </tr>
+                <tr>
+                    <td>#sep26-1</td>
+                    <td>hindi</td>
+                    <td>26. 9. — 5. října</td>
+                    <td>Navarátrí — „devět nocí“, festival k oslavě bohyně Durgy</td>
+                </tr>
+                <tr>
+                    <td>#sep28</td>
+                    <td>westernC</td>
+                    <td>28.září</td>
+                    <td>sv. Václav</td>
+                </tr>
+                <tr>
+                    <td>#oct2</td>
+                    <td>westernC</td>
+                    <td>2.října</td>
+                    <td>Neděle díkčinění</td>
+                </tr>
+                <tr>
+                    <td>#oct5</td>
+                    <td>jewish</td>
+                    <td>5.října</td>
+                    <td>Jom kippur — Den smíření</td>
+                </tr>
+                <tr>
+                    <td>#oct8</td>
+                    <td>muslim</td>
+                    <td>8.října</td>
+                    <td>Mawlid — Muhammadovy narozeniny</td>
+                </tr>
+                <tr>
+                    <td>#oct9</td>
+                    <td>buddhist</td>
+                    <td>9. října — 8. listopadu</td>
+                    <td>Kathina — měsíční svátek theravádového buddhismu, při němž světští buddhisté obdarovávají
+                        mnichy</td>
+                </tr>
+                <tr>
+                    <td>#oct10</td>
+                    <td>jewish</td>
+                    <td>10. — 16. října</td>
+                    <td>Sukot — Svátek stánků</td>
+                </tr>
+                <tr>
+                    <td>#oct18</td>
+                    <td>jewish</td>
+                    <td>18.října</td>
+                    <td>Simchat Tora — Radost z Tóry</td>
+                </tr>
+                <tr>
+                    <td>#oct24</td>
+                    <td>hindi</td>
+                    <td>24.října</td>
+                    <td>Díválí, Dípávalí — svátek světel, zapalovaných na počest bohyně Lakšmí</td>
+                </tr>
+                <tr>
+                    <td>#oct28</td>
+                    <td>secular</td>
+                    <td>28.října</td>
+                    <td>Výročí vzniku ČSR</td>
+                </tr>
+                <tr>
+                    <td>#oct31</td>
+                    <td>westernC</td>
+                    <td>31.října</td>
+                    <td>Den světové reformace</td>
+                </tr>
+                <tr>
+                    <td>#nov1</td>
+                    <td>westernC</td>
+                    <td>1.listopadu</td>
+                    <td>Den všech zesnulých svatých (dušičky)</td>
+                </tr>
+                <tr>
+                    <td>#nov5</td>
+                    <td>secular</td>
+                    <td>5.listopadu</td>
+                    <td>Světový den romského jazyka</td>
+                </tr>
+                <tr>
+                    <td>#nov15</td>
+                    <td>buddhist</td>
+                    <td>15.listopadu</td>
+                    <td>Lhabab düčhen — svátek sestoupení Buddhy z nebe Tušita</td>
+                </tr>
+                <tr>
+                    <td>#nov17</td>
+                    <td>secular</td>
+                    <td>17.listopadu</td>
+                    <td>Den boje za svobodu a demokracii</td>
+                </tr>
+                <tr>
+                    <td>#nov27</td>
+                    <td>westernC</td>
+                    <td>27.listopadu</td>
+                    <td>1. adventní neděle</td>
+                </tr>
+                <tr>
+                    <td>#nov27</td>
+                    <td>westernC</td>
+                    <td>27. listopadu —24. prosince</td>
+                    <td>Advent</td>
+                </tr>
+                <tr>
+                    <td>#dec8</td>
+                    <td>buddhist</td>
+                    <td>8.prosince</td>
+                    <td>Den bódhi — připomínka Buddhova probuzení</td>
+                </tr>
+                <tr>
+                    <td>#dec10</td>
+                    <td>secular</td>
+                    <td>10.prosince</td>
+                    <td>Den lidských práv</td>
+                </tr>
+                <tr>
+                    <td>#dec19</td>
+                    <td>jewish</td>
+                    <td>19.—26.prosince</td>
+                    <td>Chanuka — svátek znovuposvěcení jeruzalémského chrámu</td>
+                </tr>
+                <tr>
+                    <td>#dec24</td>
+                    <td>westernC</td>
+                    <td>24.prosince</td>
+                    <td>Štědrý večer</td>
+                </tr>
+                <tr>
+                    <td>#dec25</td>
+                    <td>westernC</td>
+                    <td>25.prosince</td>
+                    <td>Boží hod vánoční — první svátek vánoční</td>
+                </tr>
+                <tr>
+                    <td>#dec26</td>
+                    <td>westernC</td>
+                    <td>26.prosince</td>
+                    <td>Druhý svátek vánoční</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
 
     <script src="js/main.js"></script>
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
             </div>
-            <div class="modal-body">
-              ...
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
         </div>
-      </div>
+    </div>
+    <script src="js/convert.js"></script>
 </body>
 
 </html>

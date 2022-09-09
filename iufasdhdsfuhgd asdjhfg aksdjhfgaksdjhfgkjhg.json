@@ -1,0 +1,629 @@
+[
+    {
+        "title": "Nový občanský rok",
+        "start": "2022-01-01",
+        "end": "2022-01-02",
+        "classNames": "sekular",
+        "url": "#jan1",
+        "overlap": "false",
+        "extendedProps": {
+            "description": "Nový občanský rok"
+        }
+    },
+    {
+        "title": "obřezání Páně",
+        "start": "2022-01-01",
+        "end": "2022-01-02",
+        "classNames": "westernC",
+        "url": "#jan1-1",
+        "overlap": "false",
+        "extendedProps": {
+            "description": "obřezání Páně"
+        }
+    },
+    {
+        "title": "Zjevení Páně (Epifanie)",
+        "start": "2022-01-06",
+        "end": "2022-01-07",
+        "classNames": "westernC",
+        "url": "#jan6",
+        "overlap": "false",
+        "extendedProps": {
+            "description": "Zjevení Páně (Epifanie)"
+        }
+    },
+    {
+        "title": "Pravoslavné Vánoce",
+        "start": "2022-01-07",
+        "end": "2022-01-09",
+        "classNames": "easternC",
+        "url": "#jan7",
+        "overlap": ""true"",
+        "extendedProps": {
+            "description": "Pravoslavné Vánoce"
+        }
+    },
+    {
+        "title": "Pravoslavný Nový rok — obřezání Páně",
+        "start": "2022-01-14",
+        "end": "2022-01-15",
+        "classNames": "easternC",
+        "url": "#jan14",
+        "overlap": "false",
+        "extendedProps": {
+            "description": "Pravoslavný Nový rok — obřezání Páně"
+        }
+    },
+    {
+        "title": "Makar šankranti — zimní slunovrat, návrat světla moudrosti",
+        "start": "2022-01-14",
+        "end": "2022-01-15",
+        "classNames": "hindi",
+        "url": "#jan14-1",
+        "overlap": "false",
+        "extendedProps": {
+            "description": "Makar šankranti — zimní slunovrat, návrat světla moudrosti"
+        }
+    },
+    {
+        "title": "Tu bišvat — Nový rok stromů",
+        "start": "2022-01-17",
+        "end": "2022-01-18",
+        "classNames": "jewish",
+        "url": "#jan17",
+        "overlap": "false",
+        "extendedProps": {
+            "description": "Tu bišvat — Nový rok stromů"
+        }
+    },
+    {
+        "title": "Nový rok mahájánového buddhismu",
+        "start": "2022-01-18",
+        "end": "2022-01-19",
+        "classNames": "buddhist",
+        "url": "#jan18",
+        "overlap": "false",
+        "extendedProps": {
+            "description": "Nový rok mahájánového buddhismu"
+        }
+    },
+    {
+        "title": "Týden modliteb za jednotu křesťanů",
+        "start": "2022-01-18",
+        "end": "2022-01-26",
+        "classNames": "westernC",
+        "url": "#jan18-1",
+        "overlap": "true",
+        "extendedProps": {
+            "description": "Týden modliteb za jednotu křesťanů"
+        }
+    },
+    {
+        "title": "Zjevení Páně pravoslavných církví",
+        "start": "2022-01-19",
+        "end": "2022-01-20",
+        "classNames": "easternC",
+        "url": "#jan19",
+        "overlap": "false",
+        "extendedProps": {
+            "description": "Zjevení Páně pravoslavných církví"
+        }
+    },
+    {
+        "title": "Arménské Vánoce",
+        "start": "2022-01-19",
+        "end": "2022-01-21",
+        "classNames": "easternC",
+        "url": "#jan19-1",
+        "overlap": "true",
+        "extendedProps": {
+            "description": "Arménské Vánoce"
+        }
+    },
+    {
+        "title": "Mezinárodní den památky obětí holocaustu",
+        "start": "2022-01-27",
+        "end": "2022-01-28",
+        "classNames": "secular",
+        "url": "#jan27",
+        "overlap": "false",
+        "extendedProps": {
+            "description": "Mezinárodní den památky obětí holocaustu"
+        }
+    },
+    {
+        "title": "Týden mezináboženské harmonie",
+        "start": "2022-02-01",
+        "end": "2022-02-08",
+        "classNames": "secular",
+        "url": "#feb1",
+        "overlap": "true",
+        "extendedProps": {
+            "description": "Týden mezináboženské harmonie"
+        }
+    },
+    {
+        "title": "Den mezilidského bratrství",
+        "start": "2022-02-04",
+        "end": "2022-02-05",
+        "classNames": "secular",
+        "url": "#feb4",
+        "overlap": "false",
+        "extendedProps": {
+            "description": "Den mezilidského bratrství"
+        }
+    },
+    {
+        "title": "Vasant pančamí — oslava začátku jara",
+        "start": "2022-02-05",
+        "end": "2022-02-06",
+        "classNames": "hindi",
+        "url": "#feb5",
+        "overlap": "false",
+        "extendedProps": {
+            "description": "Vasant pančamí — oslava začátku jara"
+        }
+    },
+    {
+        "title": "Den parinirvány",
+        "start": "2022-02-15",
+        "end": "2022-02-16",
+        "classNames": "buddhist",
+        "url": "#feb15",
+        "overlap": "false",
+        "extendedProps": {
+            "description": "Den parinirvány"
+        }
+    },
+    {
+        "title": "Mágha púdža — shromáždění osvícených kolem Buddhy",
+        "start": "2022-02-16",
+        "end": "2022-02-17",
+        "classNames": "buddhist",
+        "url": "#feb16",
+        "overlap": "false",
+        "extendedProps": {
+            "description": "Mágha púdža — shromáždění osvícených kolem Buddhy"
+        }
+    },
+    {
+        "title": "Mahášivarátrí — Šivova noc",
+        "start": "2022-02-18",
+        "end": "2022-02-19",
+        "classNames": "hindi",
+        "url": "#feb18",
+        "overlap": "false",
+        "extendedProps": {
+            "description": "Mahášivarátrí — Šivova noc"
+        }
+    },
+    {
+        "title": "Losar — tibetský nový rok",
+        "start": "2022-02-21",
+        "end": "2022-02-22",
+        "classNames": "buddhist",
+        "url": "#feb21",
+        "overlap": "false",
+        "extendedProps": {
+            "description": "Losar — tibetský nový rok"
+        }
+    },
+    {
+        "title": "čínský a vietnamský nový rok",
+        "start": "2022-02-21",
+        "end": "2022-02-22",
+        "classNames": "secular",
+        "url": "#feb21-1",
+        "overlap": "false",
+        "extendedProps": {
+            "description": "čínský a vietnamský nový rok"
+        }
+    },
+    {
+        "title": "Isrá´ mi´rádž — zázračná cesta Muhammada z Jeruzaléma do nebe",
+        "start": "2022-03-01",
+        "end": "2022-03-02",
+        "classNames": "muslim",
+        "url": "#mar1",
+        "overlap": "false",
+        "extendedProps": {
+            "description": "Isrá´ mi´rádž — zázračná cesta Muhammada z Jeruzaléma do nebe"
+        }
+    },
+    {
+        "title": "Purim",
+        "start": "2022-03-17",
+        "end": "2022-03-18",
+        "classNames": "jewish",
+        "url": "#mar17",
+        "overlap": "false",
+        "extendedProps": {
+            "description": "Purim"
+        }
+    },
+    {
+        "title": "Šušan Purim (oslava Purimu v městech, která měla dřív hradby)",
+        "start": "2022-03-18",
+        "end": "2022-03-19",
+        "classNames": "jewish",
+        "url": "#mar18",
+        "overlap": "false",
+        "extendedProps": {
+            "description": "Šušan Purim (oslava Purimu v městech, která měla dřív hradby)"
+        }
+    },
+    {
+        "title": "Mezinárodní den proti rasismu",
+        "start": "2022-03-21",
+        "end": "2022-03-22",
+        "classNames": "secular",
+        "url": "#mar21",
+        "overlap": "false",
+        "extendedProps": {
+            "description": "Mezinárodní den proti rasismu"
+        }
+    },
+    {
+        "title": "Mezinárodní týdny proti rasismu",
+        "start": "2022-03-21",
+        "end": "2022-03-29",
+        "classNames": "secular",
+        "url": "#mar21-1",
+        "overlap": "true",
+        "extendedProps": {
+            "description": "Mezinárodní týdny proti rasismu"
+        }
+    },
+    {
+        "title": "Zvěstování panně Marii",
+        "start": "2022-03-25",
+        "end": "2022-03-26",
+        "classNames": "westernC",
+        "url": "#mar25",
+        "overlap": "false",
+        "extendedProps": {
+            "description": "Zvěstování panně Marii"
+        }
+    },
+    {
+        "title": "Hólí — vítězství dobra nad zlem, svátek barev",
+        "start": "2022-03-19",
+        "end": "2022-03-20",
+        "classNames": "hindi",
+        "url": "#mar19",
+        "overlap": "false",
+        "extendedProps": {
+            "description": "Hólí — vítězství dobra nad zlem, svátek barev"
+        }
+    },
+    {
+        "title": "Ramadán — postní měsíc",
+        "start": "2022-04-02",
+        "end": "2022-05-03",
+        "classNames": "muslim",
+        "url": "#apr2",
+        "overlap": "true",
+        "extendedProps": {
+            "description": "Ramadán — postní měsíc"
+        }
+    },
+    {
+        "title": "Mezinárodní den Romů",
+        "start": "2022-04-08",
+        "end": "2022-04-09",
+        "classNames": "secular",
+        "url": "#apr8",
+        "overlap": "false",
+        "extendedProps": {
+            "description": "Mezinárodní den Romů"
+        }
+    },
+    {
+        "title": "Hana macuri / Vesak — Buddhovo narození, duchovní probuzení a vstup do parinir vány",
+        "start": "2022-04-08",
+        "end": "2022-04-09",
+        "classNames": "buddhist",
+        "url": "#apr8-1",
+        "overlap": "false",
+        "extendedProps": {
+            "description": "Hana macuri / Vesak — Buddhovo narození, duchovní probuzení a vstup do parinir vány"
+        }
+    },
+    {
+        "title": "Květná neděle",
+        "start": "2022-04-10",
+        "end": "2022-04-11",
+        "classNames": "westernC",
+        "url": "#apr10",
+        "overlap": "false",
+        "extendedProps": {
+            "description": "Květná neděle"
+        }
+    },
+    {
+        "title": "Rámnavámi — narozeniny Šrí Rámy",
+        "start": "2022-04-10",
+        "end": "2022-04-11",
+        "classNames": "hindi",
+        "url": "#apr10-1",
+        "overlap": "false",
+        "extendedProps": {
+            "description": "Rámnavámi — narozeniny Šrí Rámy"
+        }
+    },
+    {
+        "title": "Velký Pátek",
+        "start": "2022-04-15",
+        "end": "2022-04-16",
+        "classNames": "westernC",
+        "url": "#apr15",
+        "overlap": "false",
+        "extendedProps": {
+            "description": "Velký Pátek"
+        }
+    },
+    {
+        "title": "Samaritánský Pesach",
+        "start": "2022-04-15",
+        "end": "2022-04-16",
+        "classNames": "samaritan",
+        "url": "#apr15-1",
+        "overlap": "false",
+        "extendedProps": {
+            "description": "Samaritánský Pesach"
+        }
+    },
+    {
+        "title": "Pesach",
+        "start": "2022-04-16",
+        "end": "2022-04-24",
+        "classNames": "jewish",
+        "url": "#apr16",
+        "overlap": "true",
+        "extendedProps": {
+            "description": "Pesach"
+        }
+    },
+    {
+        "title": "Nový rok théravádového buddhismu",
+        "start": "2022-04-16",
+        "end": "2022-04-17",
+        "classNames": "buddhist",
+        "url": "#apr16-1",
+        "overlap": "false",
+        "extendedProps": {
+            "description": "Nový rok théravádového buddhismu"
+        }
+    },
+    {
+        "title": "Hanumán džajantí — narozeniny Hanumána",
+        "start": "2022-04-16",
+        "end": "2022-04-17",
+        "classNames": "hindi",
+        "url": "#apr16-2",
+        "overlap": "false",
+        "extendedProps": {
+            "description": "Hanumán džajantí — narozeniny Hanumána"
+        }
+    },
+    {
+        "title": "Velikonoční neděle",
+        "start": "2022-04-17",
+        "end": "2022-04-18",
+        "classNames": "westernC",
+        "url": "#apr17",
+        "overlap": "false",
+        "extendedProps": {
+            "description": "Velikonoční neděle"
+        }
+    },
+    {
+        "title": "Květná neděle",
+        "start": "2022-04-17",
+        "end": "2022-04-18",
+        "classNames": "easternC",
+        "url": "#apr17-1",
+        "overlap": "false",
+        "extendedProps": {
+            "description": "Květná neděle"
+        }
+    },
+    {
+        "title": "Velikonoční pondělí",
+        "start": "2022-04-18",
+        "end": "2022-04-19",
+        "classNames": "westernC",
+        "url": "#apr18",
+        "overlap": "false",
+        "extendedProps": {
+            "description": "Velikonoční pondělí"
+        }
+    },
+    {
+        "title": "Velký Pátek",
+        "start": "2022-04-22",
+        "end": "2022-04-23",
+        "classNames": "easternC",
+        "url": "#apr22",
+        "overlap": "false",
+        "extendedProps": {
+            "description": "Velký Pátek"
+        }
+    },
+    {
+        "title": "Velikonoční neděle",
+        "start": "2022-04-24",
+        "end": "2022-04-25",
+        "classNames": "easternC",
+        "url": "#apr24",
+        "overlap": "false",
+        "extendedProps": {
+            "description": "Velikonoční neděle"
+        }
+    },
+    {
+        "title": "Velikonoční pondělí",
+        "start": "2022-04-25",
+        "end": "2022-04-26",
+        "classNames": "easternC",
+        "url": "#apr25",
+        "overlap": "false",
+        "extendedProps": {
+            "description": "Velikonoční pondělí"
+        }
+    },
+    {
+        "title": "Nabi Sueib",
+        "start": "2022-04-26",
+        "end": "2022-04-29",
+        "classNames": "druzis",
+        "url": "#apr26",
+        "overlap": "true",
+    }
+    "extendedProps": {
+        "description": "Nabi Sueib"
+    },
+    {
+        "title": "Íd al-Fitr — Svátek přerušení půstu",
+        "start": "2022-05-03",
+        "end": "2022-05-06",
+        "classNames": "muslim",
+        "url": "#may3",
+        "overlap": "true",
+        "extendedProps": {
+            "description": "Íd al-Fitr — Svátek přerušení půstu"
+        }
+    },
+    {
+        "title": "Den vítězství",
+        "start": "2022-05-08",
+        "end": "2022-05-09",
+        "classNames": "secular",
+        "url": "#may8",
+        "overlap": "false",
+        "extendedProps": {
+            "description": "Den vítězství"
+        }
+    },
+    {
+        "title": "Saga Dawa — narození, probuzení a vstup do parinirvány Buddhy Šákjamuniho (tibetský buddhismus)",
+        "start": "2022-05-08",
+        "end": "2022-05-09",
+        "classNames": "buddhist",
+        "url": "#may8-1",
+        "overlap": "false",
+        "extendedProps": {
+            "description": "Saga Dawa — narození, probuzení a vstup do parinirvány Buddhy Šákjamuniho (tibetský buddhismus)"
+        }
+    },
+    {
+        "title": "Den matek",
+        "start": "2022-05-08",
+        "end": "2022-05-09",
+        "classNames": "secular",
+        "url": "#may8-2",
+        "overlap": "false",
+        "extendedProps": {
+            "description": "Den matek"
+        }
+    },
+    {
+        "title": "Nrsimha čaturdaší — svátek inkarnace Višnua",
+        "start": "2022-05-15",
+        "end": "2022-05-16",
+        "classNames": "hindi",
+        "url": "#may15",
+        "overlap": "false",
+        "extendedProps": {
+            "description": "Nrsimha čaturdaší — svátek inkarnace Višnua"
+        }
+    },
+    {
+        "title": "Den IDAHO — Mezinárodní den proti homofobii, transfobii a bifobii",
+        "start": "2022-05-17",
+        "end": "2022-05-18",
+        "classNames": "secular",
+        "url": "#may17",
+        "overlap": "false",
+        "extendedProps": {
+            "description": "Den IDAHO — Mezinárodní den proti homofobii, transfobii a bifobii"
+        }
+    },
+    {
+        "title": "Lag baomer — výročí konce epidemie mezi žáky rabiho Akivy",
+        "start": "2022-05-19",
+        "end": "2022-05-20",
+        "classNames": "jewish",
+        "url": "#may19",
+        "overlap": "false",
+        "extendedProps": {
+            "description": "Lag baomer — výročí konce epidemie mezi žáky rabiho Akivy"
+        }
+    },
+    {
+        "title": "Ježíšovo nanebevstoupení",
+        "start": "2022-05-26",
+        "end": "2022-05-27",
+        "classNames": "westernC",
+        "url": "#may26",
+        "overlap": "false",
+        "extendedProps": {
+            "description": "Ježíšovo nanebevstoupení"
+        }
+    },
+    {
+        "title": "Ježíšovo nanebevstoupení",
+        "start": "2022-06-02",
+        "end": "2022-06-03",
+        "classNames": "easternC",
+        "url": "#jun2",
+        "overlap": "false",
+        "extendedProps": {
+            "description": "Ježíšovo nanebevstoupení"
+        }
+    },
+    {
+        "title": "Svatodušní neděle",
+        "start": "2022-06-05",
+        "end": "2022-06-06",
+        "classNames": "westernC",
+        "url": "#jun5",
+        "overlap": "false",
+        "extendedProps": {
+            "description": "Svatodušní neděle"
+        }
+    },
+    {
+        "title": "Šavuot",
+        "start": "2022-06-05",
+        "end": "2022-06-07",
+        "classNames": "jewish",
+        "url": "#jun5-1",
+        "overlap": "true",
+        "extendedProps": {
+            "description": "Šavuot"
+        }
+    },
+    {
+        "title": "Corpus Christi",
+        "start": "2022-06-16",
+        "end": "2022-06-17",
+        "classNames": "westernC",
+        "url": "#jun16",
+        "overlap": "false",
+        "extendedProps": {
+            "description": "Corpus Christi"
+        }
+    },
+    {
+        "title": "Den otců",
+        "start": "2022-06-19",
+        "end": "2022-06-20",
+        "classNames": "secular",
+        "url": "#jun19",
+        "overlap": "false",
+        "extendedProps": {
+            "description": "Den otců"
+        }
+    }
+]

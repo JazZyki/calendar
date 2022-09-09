@@ -1,5 +1,3 @@
-
-
 @import "bootstrap/functions";
 @import "bootstrap/variables";
 @import "bootstrap/mixins";
@@ -8,91 +6,50 @@ $font-family-sans-serif-2: 'Poppins', sans-serif;
 $font-family-serif: 'Source Serif Pro', serif;
 
 
+html {
+	scroll-behavior: smooth;
+}
 
 body {
 	font-family: $font-family-sans-serif;
 	background-color: #fff;
 }
+
 p {
 	color: darken(#ccc, 10%);
 	font-weight: 300;
 }
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
 	font-family: $font-family-sans-serif;
 }
+
 a {
 	transition: .3s all ease;
-	&, &:hover {
-		text-decoration: none!important;
+
+	&,
+	&:hover {
+		text-decoration: none !important;
 	}
 }
+
 .content {
 	padding: 7rem 0;
 }
+
 h2 {
 	font-size: 20px;
-}
-
-.form-control {
-	&:active, &:focus {
-		outline: none;
-		box-shadow: none;
-	}
-}
-
-#calendar {
-  margin: 0 auto;
-  .fc-view-container {
-  	// padding: 30px 30px 0 30px;
-  	background-color: $white;
-  	box-shadow: 0 15px 30px 0 rgba($black, .2);
-
-	.fc-day-number {
-		pointer-events: none;
-	}
-  }
-
-
-  .fc-toolbar.fc-header-toolbar {
-		.fc-center {
-			display: block;
-		}
-  }
-}
-
-#calendar-container {
-    position: relative;
-	width: 80vw;
-	margin: auto;
-    
-	
-  }
-
-  .fc-header-toolbar {
-    /*
-    the calendar will be butting up against the edges,
-    but let's scoot in the header's buttons
-    */
-    padding-top: 1em;
-    padding-left: 1em;
-    padding-right: 1em;
-  }
-
-
-
-
-
-.fc-toolbar {
-	@include media-breakpoint-down(sm) {
-		display: block!important;
-		text-align: center;
-		.fc-center {
-			display: block;
-			margin-top: 20px;
-			margin-bottom: 20px;
-		}
-	}
 }
 
 .header-container {
@@ -106,6 +63,456 @@ h2 {
 	background-position: center;
 }
 
+.form-control {
+
+	&:active,
+	&:focus {
+		outline: none;
+		box-shadow: none;
+	}
+}
+
+#calendar {
+	margin: 0 auto;
+
+	.fc-view-container {
+		// padding: 30px 30px 0 30px;
+		background-color: $white;
+		box-shadow: 0 15px 30px 0 rgba($black, .2);
+
+		.fc-day-number {
+			pointer-events: none;
+		}
+	}
+
+	.fc-toolbar.fc-header-toolbar {
+		.fc-center {
+			display: flex;
+			font-size: .7rem;
+		}
+	}
+}
+
+#calendar-container {
+	position: relative;
+	width: 80vw;
+	max-width: 1000px;
+	margin: auto;
+}
+
+.fc-header-toolbar {
+	/*
+    the calendar will be butting up against the edges,
+    but let's scoot in the header's buttons
+    */
+	padding: 0;
+}
+
+.fc-toolbar {
+	@include media-breakpoint-down(sm) {
+		display: block !important;
+		text-align: center;
+
+		.fc-center {
+			display: block;
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+	}
+
+	.fc-left {
+		display: flex;
+
+		.fc-button-group {
+			flex-wrap: nowrap;
+
+			.fc-button {
+				&.fc-button-primary {
+					background-color: #333;
+					border: none;
+					padding: 5px;
+					display: flex;
+					align-items: center;
+					line-height: 1em;
+				}
+
+				.fc-icon {
+					font-size: 1em;
+				}
+			}
+		}
+
+		.fc-today-button {
+			background-color: #333;
+			border: none;
+		}
+	}
+}
+
 .tooltip {
 	opacity: 1;
+}
+
+.fc-view-container {
+	.fc-head {
+		background-color: #cacaca;
+		margin-bottom: 1rem;
+		;
+	}
+
+	.fc-body {
+		.fc-scroller {
+			&.fc-day-grid-container {
+				height: auto !important;
+
+				.fc-row {
+					min-height: 5em;
+
+					.fc-day-number {
+						color: #777;
+					}
+				}
+			}
+		}
+	}
+}
+
+.fc-event {
+	border: none;
+
+	.fc-content {
+		text-overflow: ellipsis;
+
+		&::before {
+			content: '';
+			position: relative;
+			top: 2px;
+			display: inline-block;
+			width: 15px;
+			height: 15px;
+			background-size: contain;
+			background-position: center;
+			margin-right: 5px;
+		}
+	}
+
+	&.westernC {
+		background-color: #fd3b4f;
+
+		.fc-content {
+			&:before {
+				background-image: url('../images/westernC_white.png');
+			}
+		}
+	}
+
+	&.easternC {
+		background-color: #958c01;
+
+		.fc-content {
+			&:before {
+				background-image: url('../images/easternC_white.png');
+			}
+		}
+	}
+
+	&.hindi {
+		background-color: #6502b7;
+
+		.fc-content {
+			&:before {
+				background-image: url('../images/hindi_white.png');
+			}
+		}
+	}
+
+	&.jewish {
+		background-color: #E58223;
+
+		.fc-content {
+			&:before {
+				background-image: url('../images/jewish_white.png');
+			}
+		}
+	}
+
+	&.muslim {
+		background-color: #238020;
+
+		.fc-content {
+			&:before {
+				background-image: url('../images/muslim_white.png');
+			}
+		}
+	}
+
+	&.buddhist {
+		background-color: #00B6F1;
+
+		.fc-content {
+			&:before {
+				background-image: url('../images/buddhist_white.png');
+			}
+		}
+	}
+
+	&.druzis {
+		background-color: #924D36;
+
+		.fc-content {
+			&:before {
+				background-image: url('../images/druzis_white.png');
+			}
+		}
+	}
+
+	&.secular {
+		background-color: #37575E;
+
+		.fc-content {
+			&:before {
+				background-image: url('../images/secular_white.png');
+			}
+		}
+	}
+
+	&.samaritan {
+		background-color: #0074BE;
+
+		.fc-content {
+			&:before {
+				background-image: url('../images/samaritan_white.png');
+			}
+		}
+	}
+}
+
+.legend {
+	display: flex;
+	width: 80vw;
+	max-width: 1000px;
+	margin: 2em auto;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+
+	>div {
+		padding: 5px 10px;
+		color: #fff;
+		font-weight: bold;
+		margin: 10px 30px;
+		display: flex;
+		align-items: center;
+
+		&::before {
+			content: '';
+			display: inline-block;
+			width: 16px;
+			height: 16px;
+			margin-right: 5px;
+			background-size: cover;
+		}
+
+		&.secular {
+			background-color: #37575E;
+
+			&::before {
+				background-image: url('../images/secular_white.png');
+			}
+		}
+
+		&.westernC {
+			background-color: #fd3b4f;
+
+			&::before {
+				background-image: url('../images/westernC_white.png');
+			}
+		}
+
+		&.samaritan {
+			background-color: #0074BE;
+
+			&::before {
+				background-image: url('../images/samaritan_white.png');
+			}
+		}
+
+		&.druzis {
+			background-color: #924D36;
+
+			&::before {
+				background-image: url('../images/druzis_white.png');
+			}
+		}
+
+		&.muslim {
+			background-color: #238020;
+
+			&::before {
+				background-image: url('../images/muslim_white.png');
+			}
+		}
+
+		&.jewish {
+			background-color: #E58223;
+
+			&::before {
+				background-image: url('../images/jewish_white.png');
+			}
+		}
+
+		&.hindi {
+			background-color: #6502b7;
+
+			&::before {
+				background-image: url('../images/hindi_white.png');
+			}
+		}
+
+		&.easternC {
+			background-color: #958c01;
+
+			&::before {
+				background-image: url('../images/easternC_white.png');
+			}
+		}
+
+		&.buddhist {
+			background-color: #00B6F1;
+
+			&::before {
+				background-image: url('../images/buddhist_white.png');
+			}
+		}
+	}
+}
+
+.holidayOverview {
+	width: 80vw;
+	max-width: 1000px;
+	margin: auto;
+
+	table {
+		thead {
+			display: none;
+
+			th {
+
+				&:first-child,
+				&:nth-child(2) {
+					display: none;
+				}
+			}
+		}
+
+		tbody {
+			tr {
+				border-bottom: 9px solid #fff;
+				outline: 7px solid #fff;
+				position: relative;
+				&::before {
+					content: '';
+					position: relative;
+					top: 13px;
+					display: inline-block;
+					width: 15px;
+					height: 15px;
+					position: absolute;
+				
+					background-size: contain;
+					background-position: center;
+					margin-left: 5px;
+				}
+				&.secular {
+					background-color: #37575E1c;
+					&::before {
+						background-image: url('../images/secular.png');
+					}
+				}
+
+				&.westernC {
+					background-color: #fd3b4f1c;
+		
+					&::before {
+						background-image: url('../images/westernC.png');
+					}
+				}
+		
+				&.samaritan {
+					background-color: #0074BE1c;
+		
+					&::before {
+						background-image: url('../images/samaritan.png');
+					}
+				}
+		
+				&.druzis {
+					background-color: #924D361c;
+		
+					&::before {
+						background-image: url('../images/druzis.png');
+					}
+				}
+		
+				&.muslim {
+					background-color: #2380201c;
+		
+					&::before {
+						background-image: url('../images/muslim.png');
+					}
+				}
+		
+				&.jewish {
+					background-color: #E582231c;
+		
+					&::before {
+						background-image: url('../images/jewish.png');
+					}
+				}
+		
+				&.hindi {
+					background-color: #6502b71c;
+		
+					&::before {
+						background-image: url('../images/hindi.png');
+					}
+				}
+		
+				&.easternC {
+					background-color: #958c011c;
+		
+					&::before {
+						background-image: url('../images/easternC.png');
+					}
+				}
+		
+				&.buddhist {
+					background-color: #00B6F11c;
+		
+					&::before {
+						background-image: url('../images/buddhist.png');
+					}
+				}
+
+				td {
+					padding: 6px;
+
+					&:nth-child(3)
+					{
+						padding-left: 30px;
+					}
+				}
+			}
+
+			td {
+
+				&:first-child,
+				&:nth-child(2) {
+					opacity: 0;
+					position: absolute;
+					left: -9999px;
+				}
+			}
+		}
+	}
 }
